@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+
+ <!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8" />
@@ -12,248 +13,186 @@
 
 
 <style>
-body {
-    padding:0px;
-    margin:0;
-    background-color:#57b64f;
-    position:relative;
-    h1 {
-        color:white;
-        position:absolute;
-        right:20px;
-        bottom:-100vh;
-        text-transform:uppercase;
-        text-align:right;
-        font-size:60px;
-        font-weight:700;
-    }
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,700);
+* {
+  padding: 0;
+  margin: 0;
 }
 
-header#mainHeader {
-	width: 60px;
-	height: 100%;
-	left: 0;
-	transition: left 0.5s ease-in-out 0.2s; 
-	position:fixed;
-	display:inline-block;
-	background-color:#3a4151;
-	z-index: 1000;
+body {
+  background: #ddd;
+}
 
+.menu {
+  position: fixed;
+  display: block;
+  width: 130px;
+  height: 100%;
+  background: #333;
+  left: -130px;
+  top: 0;
+  text-align: center;
+  padding-top: 60px;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+.menu:after {
+  position: absolute;
+  content: "";
+  width: 60px;
+  height: 60px;
+  background: #333;
+  top: 0;
+  right: -60px;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+.menu:hover {
+  left: 0;
+}
+.menu:hover:after {
+  right: 0px;
+}
+.menu:hover .menu_icon {
+  left: 50%;
+}
+.menu li {
+  list-style-type: none;
+}
+.menu li a {
+  color: #fff;
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+  display: block;
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  font-size: 18px;
+  margin: 10px 0;
+}
+.menu li a:hover {
+  background: #000;
+}
 
-	nav {
-		height:100%;
-		width: 60px;
-		box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-	/*
-		position:absolute;
-		left:0;
-	*/
-		.top-header {
-			background-color:#3a4151;
-			position:relative;
-		}
-		&:after {
-			content:' ';
-			background-color: #3a4151;
-			width: 60px;
-	    height: 100%;
-	    position: absolute;
-	    left: 0px;
-		}
-		
-		&:before {
-			content:' ';
-			height:100%;
-			width: 0px;
-			background-color:#424a5c;
-            position: absolute;
-            left: 60px;
-            transition: width 0.2s cubic-bezier(0.6, -0.28, 0.735, 0.045);
-            box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-        }
+.menu_icon {
+  position: absolute;
+  top: 36px;
+  left: 158px;
+  margin: -10px;
+  width: 20px;
+  height: 4px;
+  background: #fff;
+  z-index: 4;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+.menu_icon:after {
+  position: absolute;
+  bottom: 7px;
+  left: 0px;
+  content: "";
+  width: 20px;
+  height: 4px;
+  background: #fff;
+}
+.menu_icon:before {
+  position: absolute;
+  bottom: -7px;
+  left: 0px;
+  content: "";
+  width: 20px;
+  height: 4px;
+  background: #fff;
+}
 
-	
-	/* L'element */
-	.navBurger {
-		cursor: pointer;
-		width:100%;
-		height:45px;
-		.burger {
-			margin-left: 18px;
-			margin-top: 30px;
-			cursor: pointer;
-			&, &::before, &::after {
-				border-radius:2px;
-			  position: absolute;
-			  z-index:100;
-			  width: 24px;
-			  height: 4px;
-			  background: white;
-			  transition: all 0.3s;
-			}
-			
-			&::before, &::after {
-			  content: "";
-			  display: block;
-			}
-			
-			/* pour créer le hamburger, on décale les deux
-			 * barres de 8px
-			 */
-			&::before {
-			  margin-top: -8px;
-			}
-			&::after {
-			  margin-top: 8px;
-			}
-		
-		}
-	
-	}
+.text {
+  width: 68%;
+  margin: 10px auto 0 auto;
+  font-family: "Roboto", sans-serif;
+  color: #333;
+  font-size: 18px;
+  line-height: 28px;
+  margin-top: 10px;
+}
+.text h2,
+.text h3 {
+  font-size: 30px;
+  padding: 20px 0 10px;
+  border-bottom: 1px solid #333;
+  margin-bottom: 15px;
+}
+.text h2 {
+  font-size: 30px;
+  line-height: 42px;
+}
+.text h3 {
+  font-size: 24px;
+  line-height: 34px;
+}
+.text p {
+  padding: 10px 0;
+}
+.text img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 10px auto;
+}
 
-		ul {
-			position: absolute;
-            margin:0;
-            padding:0;
-            width: 100%;
-            margin-top: calc(50vh - 160px);
-			li {
-                font-size:14px;
-                width:60px;
-                height:40px;
-				cursor:pointer;
-                position:relative;
-                display:block;
-				a {
-					width:150px;
-					color:white;
-					position:relative;
-					z-index:0;
-					opacity: 0;
-					left:-80px;
-					text-transform: uppercase;
-					transition: left 0.2s cubic-bezier(0.6, -0.28, 0.735, 0.045), opacity 0.15s cubic-bezier(0.6, -0.28, 0.735, 0.045);
-                    color: #fff;
-                    text-decoration:none;
-				}
-				&:before {
-					z-index:10;
-					content:' ';
-					width: 8px;
-                    height: 8px;
-                    background-color: transparent;
-                    position: absolute;
-                    left: 26px;
-                    top: 16px;
-                    border-radius: 50%;
-                    border: 2px solid white;
-                    transform: scale(1) translate3d(0,0,0);
-                    transition: all 0.2s ease-in-out;
-				}
-				a:hover, a:active, a:visited, a:focus {
-					background-color: transparent !important;
-					color:white;
-				}
-				&:hover {
-					&:before {
-						background-color: white;
-					}
-				}
-				&.active, &:hover {
-					&:before {
-						transform: scale(1.5) translate3d(0,0,0);
-				    background-color: white;
-					}
-				}
-			}
-		}
+@media only screen and (max-width: 1000px) {
+  .menu_icon {
+    left: 60px;
+  }
 
-		
-	
-		&:hover {
-			&:before {
-				width:160px;
-				transition: width 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-			}
-			.burger {
-		/* 		background:transparent; */
-				transform: rotate(45deg) translate3d(0,0,0);
-				&::before {
-				  margin-top: 0px;
-					transform: rotate(-90deg) translate3d(0,0,0);
-				}
-				&::after {
-				  margin-top: 0px;
-					transform: rotate(0deg) translate3d(0,0,0);
-				}
-			}
-		
-			li {
-				a {
-					left:70px;
-					opacity: 1;
-					transition-duration: 0.4s;
-					transition-property: left, opacity;
-					transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
-				}
-				&:nth-child(1) a { 
-					transition-delay: 0.3s;
-				}
-				&:nth-child(2) a { 
-					transition-delay: 0.34s;
-				}
-				&:nth-child(3) a { 
-					transition-delay: 0.38s;
-				}
-				&:nth-child(4) a { 
-					transition-delay: 0.42s;
-				}
-				&:nth-child(5) a { 
-					transition-delay: 0.46s;
-				}
-				&:nth-child(6) a { 
-					transition-delay: 0.50s;
-				}
-				&:nth-child(7) a { 
-					transition-delay: 0.54s;
-				}
-				&:nth-child(8) a { 
-					transition-delay: 0.58s;
-				}
-			
-			}
-		}
-	}
-	
+  .menu {
+    position: relative;
+    width: 100%;
+    height: 60px;
+    left: 0px;
+    top: 0px;
+    padding-top: 0;
+    padding-left: 80px;
+  }
+  .menu:after {
+    display: none;
+  }
+  .menu:hover .menu_icon {
+    left: 60px;
+  }
+
+  li {
+    float: left;
+    margin: 0 20px;
+  }
+  li a {
+    padding: 0 10px;
+  }
 }
 </style>
 </head>
 <body>
-<header class="banner" id="mainHeader" role="banner">
+<ul class="menu">
+  <div class="menu_icon"></div>
+    <li><a href="#">Home</a></li>
+    <li><a href="#">News</a></li>
+    <li><a href="#">Contact</a></li>
+</ul>
+<div class="text">
+  <h2>Template with a responsive vertical menu for a blog</h2>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est reiciendis repellendus itaque voluptates, omnis nobis suscipit, eaque voluptatum quisquam optio natus facilis nesciunt repudiandae laudantium nostrum nam dolores quae voluptatem.</p>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est reiciendis repellendus itaque voluptates, omnis nobis suscipit, eaque voluptatum quisquam optio natus facilis nesciunt repudiandae laudantium nostrum nam dolores quae voluptatem.</p>
+  
+  <h3>This is the first news !</h3>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est reiciendis repellendus itaque voluptates, omnis nobis suscipit, eaque voluptatum quisquam optio natus facilis nesciunt repudiandae laudantium nostrum nam dolores quae voluptatem.</p>
+  
+  <img src="http://freefunnydogpictures.com/wp-content/uploads/2014/05/picture_1400053660.jpg" />
+  
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est reiciendis repellendus itaque voluptates, omnis nobis suscipit, eaque voluptatum quisquam optio natus facilis nesciunt repudiandae laudantium nostrum nam dolores quae voluptatem.</p>
+  
+  <h3>This is the second news !</h3>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est reiciendis repellendus itaque voluptates, omnis nobis suscipit, eaque voluptatum quisquam optio natus facilis nesciunt repudiandae laudantium nostrum nam dolores quae voluptatem.</p>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est reiciendis repellendus itaque voluptates, omnis nobis suscipit, eaque voluptatum quisquam optio natus facilis nesciunt repudiandae laudantium nostrum nam dolores quae voluptatem.</p>
+</div>
 
-    <nav role="navigation">
-        <div class="top-header">
-            <div class="navBurger">
-                <div class="burger"></div>
-            </div>
-        </div>
- 
-<!-- This part is the navigation generated by Wordpress.  -->
-        <ul id="menu-vertical-menu" class="nav">
-            <li><a href="#">This menu</a></li>
-            <li><a href="#">is built from</a></li>
-            <li><a href="#">WP navigation</a></li>
-            <li><a href="#">and only made</a></li>
-            <li><a href="#">with custom</a></li>
-            <li><a href="#">css !</a></li>
-		</ul>
-    </nav>
-    
-</header>
-
-<h1>
-    It's a<br>kind of<br>maaaagic !
-</h1>
 </body>
 </html>
- 
