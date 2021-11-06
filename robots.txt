@@ -1,4 +1,3 @@
-
 User-agent: * 
 Disallow:
 Sitemap: https://nenoksanavigator.on.fleek.co/sitemap.xml
