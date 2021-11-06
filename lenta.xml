@@ -1,0 +1,66 @@
+<rss xmlns:yandex="http://news.yandex.ru" xmlns:media="http://search.yahoo.com/mrss/" xmlns:turbo="http://turbo.yandex.ru" version="2.0">
+    <channel>
+        <title>Ненокса_навигатор</title>
+        <link>https://nenoksanavigator.on.fleek.co/</link>
+        <description>Сайт жителей села Ненокса,где всегда можно узнать новости Ненокса,погода Ненокса,расписание поездов Ненокса</description>
+        <turbo:analytics type="Yandex" id="123456"></turbo:analytics>
+        <turbo:adNetwork type="Yandex" id="идентификатор блока" turbo-ad-id="first_ad_place"></turbo:adNetwork>
+        <turbo:adNetwork type="AdFox" turbo-ad-id="second_ad_place">
+            <![CDATA[
+                <div id="идентификатор контейнера"></div>
+                <script>
+                    window.Ya.adfoxCode.create({
+                        ownerId: 123456,
+                        containerId: 'идентификатор контейнера',
+                        params: {
+                            pp: 'g',
+                            ps: 'cmic',
+                            p2: 'fqem'
+                        }
+                    });
+                </script>
+            ]]>
+        </turbo:adNetwork>
+        <yandex:related type="infinity">
+            <link url="<link url="https://nenoksanavigator.on.fleek.co/">Новости Ненокса</link>
+            ">Новости Ненокса</link>
+            
+          <link url="http://www.example.com/other-page2.html">Погода в Неноксе</link>
+        <link url="http://www.example.com/other-page1.html">Расписание поезда Северодвинск-Ненокса</link>
+            
+      </yandex:related>
+        <item turbo="true">
+            <turbo:extendedHtml>true</turbo:extendedHtml>
+            <link>https://nenoksanavigator.on.fleek.co/</link>
+            <author>ncf</author>
+            <category>Технологии</category>
+         
+            <turbo:content>
+                <![CDATA[
+                    <header>
+                        <h1>Ненокса_навигатор</h1>
+                        <h2>Новости. Погода. Расписание поездов. Объявления.</h2>
+                        <figure>
+                            <img src="https://sun9-58.userapi.com/impg/Q7UAfQFvGFBlbn8jYNbcipGY4r2v9LY1fmWjjw/pPg-7yYhUoM.jpg?size=1280x960&quality=96&sign=5a1d369a6671ebbfc605b4cdff54d4ad&type=album">
+                        </figure>
+                        <menu>
+                            <a href="https://nenoksanavigator.on.fleek.co/">Новости Ненокса </a>
+                            <a href="http://example.com/page2.html">Погода в Неноксе</a>
+ <a href="http://example.com/page2.html">Расписание поезда Ненокса-Северодвинск</a>
+                        </menu>
+                    </header>
+                    <p>Как хорошо начать день в Неноксе? </p>
+                    <p> Узнай все сразу  <a href="https://nenoksanavigator.on.fleek.co/">на нашем сайте</a>.</p>
+                    <h2>Новости</h2>
+                    <figure>
+                        <img src="http://4turista.ru/sites/default/files/fold/21_loshadka.jpg">
+                        <figcaption>Конь богатырский</figcaption>
+                    </figure> 
+                    <p>Все новости села транслируются из соцсетей.</p>
+                    <p>Убедитесь в этом сами.</p>
+                   
+                ]]>
+            </turbo:content>
+        </item>
+    </channel>
+</rss>
