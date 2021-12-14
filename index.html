@@ -1,4 +1,3 @@
-<!doctype html>
 <html lang="ru">
   <head>
     <!-- Обязательные метатеги -->
@@ -62,31 +61,7 @@
 
  
 
-
-
-
-<link href="fav.ico" rel="icon" type="image/x-icon" />
-
-<script>
-$(document).ready(function(){
-    $('[data-bs-toggle="tooltip"]').tooltip();
-});
-</script>
-
-<script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
-<script>
-  window.OneSignal = window.OneSignal || [];
-  OneSignal.push(function() {
-    OneSignal.init({
-      appId: "b30b6fbc-3897-4153-991a-3939ec631699",
-    });
-  });
-</script>
-
-
-
     <title>Нёнокса _ Навигатор    </title>
-    
   </head>
   
   
@@ -94,472 +69,433 @@ $(document).ready(function(){
 <script type="text/javascript">
 
 </script> 
+  <script type="text/javascript">
+setTimeout(function(){
+location="news.html";
+}, 3000);
+</script> 
   
-  
-  
+
   
   
   <style type="text/css">
+ .text-typing
+{
+    width: 40em;
+    color:green;
+    font-size: 22px;
+    font-family: 'Marck Script', cursive;
+    white-space:nowrap;
+    overflow:hidden;
+    -webkit-animation: type 5s steps(50, end);
+    animation: type 5s steps(50, end);
+}
+
+@keyframes type{
+    from { width: 0; }
+}
+
+@-webkit-keyframes type{
+    from { width: 0; }
+}
   
- .myTooltip{
- 
- font-weight:bold;
-display:block;
-margin:1px 0 0 0;
-font-size: 18px;
-color: #2E0032;
-background-color: #fff
+  
+  
+  
+  
 
-  text-align: left;
-
- 
- 
- 
- 
- } 
-  .carousel-item{
-    min-height: 280px;
+.loading-area {
+ width: 100%;
+ height: 100%;
+ position: fixed;
+ left: 0;
+ top: 0;
+ z-index: 9999;
+ overflow: hidden;
 }
 
-div {
-
-
--moz-border-radius: 2px;
--webkit-border-radius: 2px;
-
+.loading-box {
+ width: 100%;
+ height: 100%;
+ background-color: #FFF;
+ position: absolute;
+ left: 0;
+ top: 0;
+ opacity: 1;
+ z-index: 9999;
 }
 
-
-
-
-
-div.feedburnerFeedBlock ul li span.headline {
-font-weight:bold;
-display:block;
-margin:1px 0 0 0;
-font-size: 18px;
-color: #2E0032;
-
-
-  text-align: left;
-
-
+.loading-pic {
+ width: 100%;
+ position: absolute;
+ top: 50%;
+ z-index: 99999;
+ text-align: center;
+ -webkit-transform: translateY(-50%);
+ -moz-transform: translateY(-50%);
+ -ms-transform: translateY(-50%);
+ transform: translateY(-50%);
 }
 
-body {
-		background-image: url();
-		margin:20px;
-		font:x-small Georgia,Serif;
-		font-size: 18px;
-		font-size: 
-		line-height: 1.6em;
-		
-		
-		 word-spacing: 6px
-		}
-	
-	a:link {
-		color:#E17D0C;
-		text-decoration:none;
-		-webkit-animation:jump 3s ease-out 0s 1 normal;
--moz-animation:jump 3s ease-out 0s 1 normal;
--ms-animation:jump 3s ease-out 0s 1 normal;
-animation:jump 3s ease-out 0s 1 normal;
-		
-		
-		}
-	a:visited {
-		color:#E17D0C	;
-		text-decoration:none;
-		-webkit-animation:jump 3s ease-out 0s 1 normal;
--moz-animation:jump 3s ease-out 0s 1 normal;
--ms-animation:jump 3s ease-out 0s 1 normal;
-animation:jump 3s ease-out 0s 1 normal;
-		}
-	a:hover {
-		color:#E17D0C	;
-		text-decoration:underline;
-		-webkit-animation:jump 3s ease-out 0s 2 normal;
--moz-animation:jump 3s ease-out 0s 2 normal;
--ms-animation:jump 3s ease-out 0s 2 normal;
-animation:jump 3s ease-out 0s 2 normal;
-		}
-		
-	h1 {
-		font-size:100%;
-		line-height:1.2em;
-		font-weight:normal;
-		color:#fff;
-		text-transform:uppercase;
-		letter-spacing:.2em;
-	}
-	h2 {
-		font-size:50%;
-		line-height:1.2em;
-		font-weight:normal;
-		color:#fff;
-		text-transform:uppercase;
-		letter-spacing:.2em;
-	}
-	
-		
-	/* Happy Resyndicator
-	----------------------------------------------- */
-	
-	div.feedburnerFeedBlock p.date {
-	text-shadow:0px 5px 16px #6910f9;
-		}
-		
-		
-	div.feedburnerFeedBlock ul li div {
-		display: inline;
-		}
-	div.feedburnerFeedBlock span.headline a {
-		font-weight: normal;
-		font-size: 2.2em;
-		color: #001A1A;
-		
-		 word-spacing: 15px
-		
-		}
-	div.feedburnerFeedBlock ul li 
-	
-	
-	{
-		margin-bottom: 2em;
-		padding-left: 0;
-		text-indent: 0;
-		}
-	div.feedburnerFeedBlock ul {
-		list-style: none;
-		margin: 0;
-		padding: 0;
-	}
-
-
-
-
-
-	div.feedburnerFeedBlock {
-border: 3px ;
-border-color:  #001A1A;
-
+.loader {
+ height: 58px;
+ left: 50%;
+ position: absolute;
+ transform: translateX(-50%) translateY(-50%);
+ -o-transform: translateX(-50%) translateY(-50%);
+ -ms-transform: translateX(-50%) translateY(-50%);
+ -webkit-transform: translateX(-50%) translateY(-50%);
+ -moz-transform: translateX(-50%) translateY(-50%);
+ width: 58px;
 }
 
-
- -webkit-animation:flipout 1s ease 0.2s 1 normal;
--moz-animation:flipout 1s ease 0.2s 1 normal;
--ms-animation:flipout 1s ease 0.2s 1 normal;
-animation:flipout 1s ease 0.2s 1 normal;
-
+.loader span {
+ background: rgba(217, 101, 0, 0.98);
+ display: block;
+ height: 12px;
+ opacity: 0;
+ position: absolute;
+ width: 12px;
+ animation: load 4.6s ease-in-out infinite;
+ -o-animation: load 4.6s ease-in-out infinite;
+ -ms-animation: load 4.6s ease-in-out infinite;
+ -webkit-animation: load 4.6s ease-in-out infinite;
+ -moz-animation: load 4.6s ease-in-out infinite;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.navbar{
-
--moz-border-radius: 0px;
--webkit-border-radius: 0px;
-background: rgba(0, 0, 0, 0.25);
-}
-font-size: 18px;
-font-weight:bold;
-color: #FF7400;
-
-
-
-
-
-@-webkit-keyframes jump{
-0%{ -webkit-transform:translateY(0); transform:translateY(0); }
-20%{ -webkit-transform:translateY(0); transform:translateY(0); }
-40%{ -webkit-transform:translateY(-30px); transform:translateY(-30px); }
-50%{ -webkit-transform:translateY(0); transform:translateY(0); }
-60%{ -webkit-transform:translateY(-15px); transform:translateY(-15px); }
-80%{ -webkit-transform:translateY(0); transform:translateY(0); }
-100%{ -webkit-transform:translateY(0);transform:translateY(0); }
+.loader span.block-1 {
+ animation-delay: 1.06s;
+ -o-animation-delay: 1.06s;
+ -ms-animation-delay: 1.06s;
+ -webkit-animation-delay: 1.06s;
+ -moz-animation-delay: 1.06s;
+ left: 0px;
+ top: 0px;
 }
 
-@keyframes jump{
-0%{ transform:translateY(0); }
-20%{ transform:translateY(0); }
-40%{ transform:translateY(-30px); }
-50%{ transform:translateY(0); }
-60%{ transform:translateY(-30px); }
-80%{ transform:translateY(0); }
-100%{ transform:translateY(0); }
+.loader span.block-2 {
+ animation-delay: 0.97s;
+ -o-animation-delay: 0.97s;
+ -ms-animation-delay: 0.97s;
+ -webkit-animation-delay: 0.97s;
+ -moz-animation-delay: 0.97s;
+ left: 16px;
+ top: 0px;
 }
 
+.loader span.block-3 {
+ animation-delay: 0.87s;
+ -o-animation-delay: 0.87s;
+ -ms-animation-delay: 0.87s;
+ -webkit-animation-delay: 0.87s;
+ -moz-animation-delay: 0.87s;
+ left: 31px;
+ top: 0px;
+}
 
+.loader span.block-4 {
+ animation-delay: 0.78s;
+ -o-animation-delay: 0.78s;
+ -ms-animation-delay: 0.78s;
+ -webkit-animation-delay: 0.78s;
+ -moz-animation-delay: 0.78s;
+ left: 47px;
+ top: 0px;
+}
+
+.loader span.block-5 {
+ animation-delay: 0.69s;
+ -o-animation-delay: 0.69s;
+ -ms-animation-delay: 0.69s;
+ -webkit-animation-delay: 0.69s;
+ -moz-animation-delay: 0.69s;
+ left: 0px;
+ top: 16px;
+}
+
+.loader span.block-6 {
+ animation-delay: 0.6s;
+ -o-animation-delay: 0.6s;
+ -ms-animation-delay: 0.6s;
+ -webkit-animation-delay: 0.6s;
+ -moz-animation-delay: 0.6s;
+ left: 16px;
+ top: 16px;
+}
+
+.loader span.block-7 {
+ animation-delay: 0.51s;
+ -o-animation-delay: 0.51s;
+ -ms-animation-delay: 0.51s;
+ -webkit-animation-delay: 0.51s;
+ -moz-animation-delay: 0.51s;
+ left: 31px;
+ top: 16px;
+}
+
+.loader span.block-8 {
+ animation-delay: 0.41s;
+ -o-animation-delay: 0.41s;
+ -ms-animation-delay: 0.41s;
+ -webkit-animation-delay: 0.41s;
+ -moz-animation-delay: 0.41s;
+ left: 47px;
+ top: 16px;
+}
+
+.loader span.block-9 {
+ animation-delay: 0.32s;
+ -o-animation-delay: 0.32s;
+ -ms-animation-delay: 0.32s;
+ -webkit-animation-delay: 0.32s;
+ -moz-animation-delay: 0.32s;
+ left: 0px;
+ top: 31px;
+}
+
+.loader span.block-10 {
+ animation-delay: 0.23s;
+ -o-animation-delay: 0.23s;
+ -ms-animation-delay: 0.23s;
+ -webkit-animation-delay: 0.23s;
+ -moz-animation-delay: 0.23s;
+ left: 16px;
+ top: 31px;
+}
+
+.loader span.block-11 {
+ animation-delay: 0.14s;
+ -o-animation-delay: 0.14s;
+ -ms-animation-delay: 0.14s;
+ -webkit-animation-delay: 0.14s;
+ -moz-animation-delay: 0.14s;
+ left: 31px;
+ top: 31px;
+}
+
+.loader span.block-12 {
+ animation-delay: 0.05s;
+ -o-animation-delay: 0.05s;
+ -ms-animation-delay: 0.05s;
+ -webkit-animation-delay: 0.05s;
+ -moz-animation-delay: 0.05s;
+ left: 47px;
+ top: 31px;
+}
+
+.loader span.block-13 {
+ animation-delay: -0.05s;
+ -o-animation-delay: -0.05s;
+ -ms-animation-delay: -0.05s;
+ -webkit-animation-delay: -0.05s;
+ -moz-animation-delay: -0.05s;
+ left: 0px;
+ top: 47px;
+}
+
+.loader span.block-14 {
+ animation-delay: -0.14s;
+ -o-animation-delay: -0.14s;
+ -ms-animation-delay: -0.14s;
+ -webkit-animation-delay: -0.14s;
+ -moz-animation-delay: -0.14s;
+ left: 16px;
+ top: 47px;
+}
+
+.loader span.block-15 {
+ animation-delay: -0.23s;
+ -o-animation-delay: -0.23s;
+ -ms-animation-delay: -0.23s;
+ -webkit-animation-delay: -0.23s;
+ -moz-animation-delay: -0.23s;
+ left: 31px;
+ top: 47px;
+}
+
+.loader span.block-16 {
+ animation-delay: -0.32s;
+ -o-animation-delay: -0.32s;
+ -ms-animation-delay: -0.32s;
+ -webkit-animation-delay: -0.32s;
+ -moz-animation-delay: -0.32s;
+ left: 47px;
+ top: 47px;
+}
+
+@keyframes load {
+ 0% {
+ opacity: 0;
+ transform: translateY(-97px);
+ }
+ 15% {
+ opacity: 0;
+ transform: translateY(-97px);
+ }
+ 30% {
+ opacity: 1;
+ transform: translateY(0);
+ }
+ 70% {
+ opacity: 1;
+ transform: translateY(0);
+ }
+ 85% {
+ opacity: 0;
+ transform: translateY(97px);
+ }
+ 100% {
+ opacity: 0;
+ transform: translateY(97px);
+ }
+}
+
+@-o-keyframes load {
+ 0% {
+ opacity: 0;
+ -o-transform: translateY(-97px);
+ }
+ 15% {
+ opacity: 0;
+ -o-transform: translateY(-97px);
+ }
+ 30% {
+ opacity: 1;
+ -o-transform: translateY(0);
+ }
+ 70% {
+ opacity: 1;
+ -o-transform: translateY(0);
+ }
+ 85% {
+ opacity: 0;
+ -o-transform: translateY(97px);
+ }
+ 100% {
+ opacity: 0;
+ -o-transform: translateY(97px);
+ }
+}
+
+@-ms-keyframes load {
+ 0% {
+ opacity: 0;
+ -ms-transform: translateY(-97px);
+ }
+ 15% {
+ opacity: 0;
+ -ms-transform: translateY(-97px);
+ }
+ 30% {
+ opacity: 1;
+ -ms-transform: translateY(0);
+ }
+ 70% {
+ opacity: 1;
+ -ms-transform: translateY(0);
+ }
+ 85% {
+ opacity: 0;
+ -ms-transform: translateY(97px);
+ }
+ 100% {
+ opacity: 0;
+ -ms-transform: translateY(97px);
+ }
+}
+
+@-webkit-keyframes load {
+ 0% {
+ opacity: 0;
+ -webkit-transform: translateY(-97px);
+ }
+ 15% {
+ opacity: 0;
+ -webkit-transform: translateY(-97px);
+ }
+ 30% {
+ opacity: 1;
+ -webkit-transform: translateY(0);
+ }
+ 70% {
+ opacity: 1;
+ -webkit-transform: translateY(0);
+ }
+ 85% {
+ opacity: 0;
+ -webkit-transform: translateY(97px);
+ }
+ 100% {
+ opacity: 0;
+ -webkit-transform: translateY(97px);
+ }
+}
+
+@-moz-keyframes load {
+ 0% {
+ opacity: 0;
+ -moz-transform: translateY(-97px);
+ }
+ 15% {
+ opacity: 0;
+ -moz-transform: translateY(-97px);
+ }
+ 30% {
+ opacity: 1;
+ -moz-transform: translateY(0);
+ }
+ 70% {
+ opacity: 1;
+ -moz-transform: translateY(0);
+ }
+ 85% {
+ opacity: 0;
+ -moz-transform: translateY(97px);
+ }
+ 100% {
+ opacity: 0;
+ -moz-transform: translateY(97px);
+ }
+}
 
   </style>
 
   
   
-  <body style="  ">
- 
-    <h1></h1>
+  <body>
+  
+  
+  
+
+
+
     
- 
-
-  
-  
-  
-  
-  
-  
-  
-  
- 
-    
- <nav class="navbar sticky-top navbar-light"style="background: rgba(0, 0, 0, 0.10);
-"  >
-<a class="navbar-brand" href="#"><span style="font-size:18px;"><span  "></span> </a>
-<ul class="nav justify-content-end">
-
-<div class="row">
-  <div class="col-3  ">
-
-<li class="nav-item"><a class="nav-link" href="#"data-bs-toggle="tooltip" title="Лента новостей села Ненокса. "><span style="color:#FFA714;"><i class="bi bi-rss" style="font-size: 2.5rem; color: #E16600"></i></span></a></li>
+  <div class="loading-area">
+ <div class="loading-box"></div>
+ <div class="loading-pic">
+ <div class="loader">
+ <span class="block-1"></span>
+ <span class="block-2"></span>
+ <span class="block-3"></span>
+ <span class="block-4"></span>
+ <span class="block-5"></span>
+ <span class="block-6"></span>
+ <span class="block-7"></span>
+ <span class="block-8"></span>
+ <span class="block-9"></span>
+ <span class="block-10"></span>
+ <span class="block-11"></span>
+ <span class="block-12"></span>
+ <span class="block-13"></span>
+ <span class="block-14"></span>
+ <span class="block-15"></span>
+ <span class="block-16"></span>
+ </div>
+ </div>
 </div>
 
-
-
-<div class="col-3">
-	<li class="nav-item"><a class="nav-link" href="musei.html"data-bs-toggle="tooltip" title="Культура,музей в Неноксе,мероприятия"><span style="color:#fff;"> <i class="bi bi-images" style="font-size: 2.5rem; color: #070756"></i </span></a></li>
-</div>	
-<div class="col-3">
-<li class="nav-item"><a class="nav-link" href="pogoda.html"data-bs-toggle="tooltip" title="Прогноз погоды в Неноксе."><span style="color:#fff;"><i class="bi bi-cloud-sun" style="font-size: 2.5rem; color:#070756 " ></i>   </span></a></li>
-</div>		
-<div class="col-3">
-<li class="nav-item"><a class="nav-link" href="rasp.html"data-bs-toggle="tooltip" title="Расписание поезда Северодвинск-Ненокса,Ненокса-Северодвинск"><span style="color:#fff;"><i class="bi bi-menu-up" style="font-size: 2.5rem; color: #070756"></i></span></a></li>
-
-</div>
-
-</div>
-
-
-
-</li>
-</ul>
-
-</nav> 
-  
-  <nav class="navbar navbar-expand-lg navbar-light " style="background-color: #fff;">
-  <div class="container-fluid" style="background-color: rgba(0, 0, 0, 0.10);">
-    <a class="navbar-brand"  "style="font-weight:bold;"> Нёнокса _ Навигатор <i class="bi bi-geo-alt"></i>    </a>
-        <!-- uSocial -->
-<script async src="https://usocial.pro/usocial/usocial.js?uid=a4ebd267c8f63232&v=6.1.5" data-script="usocial" charset="utf-8"></script>
-<div class="uSocial-Share" data-pid="30aa906bd38573df30d730cde713aa6a" data-type="share" data-options="rect,style3,default,absolute,horizontal,size32,eachCounter0,counter1,counter-after,nomobile,mobile_position_right" data-social="bookmarks,vk,telegram,vi"></div>
-<!-- /uSocial --> 
-  </div>
  
-</nav>
-  
-<hr>  
 
- 
- <nav>
-    <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="#">Лента</a></li>
-        <li class="breadcrumb-item"><a href="#">   </a></li>
-        <li class="breadcrumb-item ">
-        
-        
-        
-
-<button onclick="window.location.href = 'https://t.me/nenoksa_navigator';" type="button" class="btn btn-outline-secondary btn-sm">Telegramm </button>
-
-
-<button type="button" class="btn btn-outline-primary btn-sm">Viber</button>
-<button type="button" class="btn btn-outline-info btn-sm">Twitter</button>
-   </li>
-    
-    </ol>
-    
-    
-    
-</nav>   
-   <hr>
-   <div class="row">
-    <div class="col-sm-6 p-3 "><script src="https://feeds.feedburner.com/feed43/DgqV?format=sigpro" type="text/javascript"></script><noscript><p>Подпишитесь на обновления RSS заголовков от: <a href="http://feeds.feedburner.com/feed43/DgqV"></a><br/>Создано FeedBurner</p> </noscript>
-<hr>
-
-<iframe width="100%" height="315" src="https://www.youtube.com/embed/videoseries?list=PL57BUGuiME5Fq-r2uuCg5XX8Tcnlo77x6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-
- <hr>
- 
-  </div>
- 
-    <div class="col-sm-6 p-3 " style= "text-align: left;  ">
-    
-
-    <marquee  scrolldelay="100" onmouseout="this.start()" onmouseover="this.stop()"><span style="color: ;"><b> Создан канал новостей в Телеграм  <a href="https://t.me/nenoksa_navigator" title="Перейти">Нёнокса-навигатор</a></b></span></marquee>
-    
-    <hr>
-    
-    <div id="myCarousel" class="carousel carousel-dark slide" data-bs-ride="carousel"
-    <!-- Carousel indicators -->
-    <ol class="carousel-indicators">
-        
-    </ol>
-
-    <!-- Wrapper for carousel items -->
-    <div class="carousel-inner">
-        <div class="carousel-item active">
-            <img src=" https://storageapi.fleek.co/16e9ed11-93b3-4070-a046-0ab8f870994f-bucket/image/maxresdefault.jpg" class="d-block w-100" alt="Slide 1"data-bs-toggle="tooltip" title="Девушка из Нёноксы с конем на фоне церкви.">
-        </div>
-       
-        <div class="m-4">
-   
-    </div>
-    </div>
-
-   
-</div>
-    
-   <hr>   
-    
-    
-    
-    
- <script src="https://feeds.feedburner.com/feedfry/emis?format=sigpro" type="text/javascript"></script><noscript><p>Подпишитесь на обновления RSS заголовков от: <a href="http://feeds.feedburner.com/feedfry/emis"></a><br/>Создано FeedBurner</p> </noscript>
-<hr>
-
-
-
-<div id="myCarousel" class="carousel carousel-dark slide" data-bs-ride="carousel">
-    <!-- Carousel indicators -->
-    <ol class="carousel-indicators">
-        <li data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"></li>
-        <li data-bs-target="#myCarousel" data-bs-slide-to="1"></li>
-        <li data-bs-target="#myCarousel" data-bs-slide-to="2"></li>
-    </ol>
-
-    <!-- Wrapper for carousel items -->
-    <div class="carousel-inner">
-        <div class="carousel-item active">
-            <img src="https://novayagazeta.ru/static/records/3e9ee2b0bd504463a2d1deeb8f24dfee.webp" class="d-block w-100" alt="Slide 1">
-        </div>
-        <div class="carousel-item">
-            <img src="https://www.severodvinsk.info/img/pr/2019/07/11/0_Nenoksa_Den_sela.jpg" class="d-block w-100" alt="Slide 2">
-        </div>
-        <div class="carousel-item">
-            <img src="http://4turista.ru/sites/default/files/fold/21_loshadka.jpg" class="d-block w-100" alt="Slide 3">
-        </div>
-    </div>
-
-    <!-- Carousel controls -->
-    <a class="carousel-control-prev" href="#myCarousel" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon"></span>
-    </a>
-    <a class="carousel-control-next" href="#myCarousel" data-bs-slide="next">
-        <span class="carousel-control-next-icon"></span>
-    </a>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</div>
-
-  </div>
-   <hr>
-
-
-
-
-<hr>
-
-<hr>
-
-
-
-
-
-<h1>Ненокса</h1>
- 
-<h2>ненокса	
-,	
-ненокса архангельская область,	
-	
-ненокса в сердце моем	,
-ненокоцкая ключевка,
-село ненокса,	
-
-ненокса новости
-ненокса карта	,
-прогноз погоды в неноксе,	
-полигон ненокса	,
-ненокса церковь	,
-взрыв в неноксе	,
-
-	
-,
-село ненокса архангельской,	
-
-расписание дежурки северодвинск ненокса ,
-село ненокса архангельской области,	
-ненокса фото	,
-ненокса сегодня	,
-троицкая церковь ненокса,	
-архангельск ненокса	,
-
-ненокса в ч	,
-ненокса архангельская на карте	,
-ненокса архангельская область карта,
-,	
-
-герб ненокса	,
-расписание электричек северодвинск ненокса	,
-ненокса архангельская погода	,
-ненокса сайт	,
-ненокса в ч ,
-	,
-поселок ненокса</h2>
     <!-- Необязательный JavaScript; выберите один из двух! -->
 
     <!-- Вариант 1: пакет Bootstrap с Popper -->
@@ -570,25 +506,9 @@ color: #FF7400;
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
     -->
- 
-   <div class="fixed-bottom">
- <div class="container" style="background: rgba(0, 0, 0, 0.10);">
-  
-  <div class="row">
-    <div class="col">
-      <a class="nav-link" href="mess.html"data-bs-toggle="tooltip" title="Трансляция сообщений со страницы VK 'Ненокса объявления'."><span style="color:#515C7B;"> <i class="bi bi-chat-left-text-fill" style="font-size: 2.5rem; color: #070756"></i </span></a>
-    </div>
-    <div class="col">
-         <a class="nav-link" href="mapsnenoksa.html"data-bs-toggle="tooltip" title="Нырнуть в портал."><span style="color:#515C7B;"> <i class="bi-geo-alt-fill" style="font-size: 2.5rem; color:#070756"></i </span></a>
-    </div>
-    <div class="col col-md-auto">
-      <a class="nav-link" href="https://msg.adamant.im?address /?referal=U7593655164272932552"data-bs-toggle="tooltip"id="myTooltip" title="Шифрованные сообщения и криптокошелек.Получите пробную криптовалюту."><span style="color:#070756" > <i class="bi bi-circle-square" style="font-size: 2.5rem;   "></i </span></a>
-    </div>
-  </div>
-</div>
+    
 
-</div>
- 
+    
     
   </body>
 </html>
