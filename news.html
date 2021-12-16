@@ -92,6 +92,46 @@ $(document).ready(function(){
   
 
 <script type="text/javascript">
+document.addEventListener("DOMContentLoaded", function () {
+  let gototop = document.querySelector(".ufive_uptop");
+  let body = document.documentElement;
+
+  window.addEventListener("scroll", check);
+
+  function check() {
+    pageYOffset >= 500 && gototop.classList.add("ufive_upview");
+    pageYOffset < 500 && gototop.classList.remove("ufive_upview");
+  }
+
+  gototop.onclick = function () {
+    animate({
+      duration: 700,
+      timing: gogototopEaseOut,
+      draw: (progress) => (body.scrollTop = body.scrollTop * (1 - progress / 7))
+    });
+  };
+
+  let circ = (timeFraction) =>
+    1 -
+    Math.sin(Math.acos(timeFraction > 1 ? (timeFraction = 1) : timeFraction));
+
+  let makeEaseOut = (timing) => (timeFraction) => 1 - timing(1 - timeFraction);
+  let gogototopEaseOut = makeEaseOut(circ);
+});
+
+function animate(options) {
+  let start = performance.now();
+
+  requestAnimationFrame(function animate(time) {
+    let timeFraction = (time - start) / options.duration;
+    timeFraction > 1 && (timeFraction = 1);
+
+    let progress = options.timing(timeFraction);
+
+    options.draw(progress);
+    timeFraction < 1 && requestAnimationFrame(animate);
+  });
+}
 
 </script> 
   
@@ -317,6 +357,51 @@ color: #FF7400;
 100%{ transform:translateY(0); }
 }
 
+.ufive_uptop {
+  position: fixed;
+  display: block;
+  box-sizing: border-box;
+  height: 50px;
+  width: 50px;
+  border: none;
+  background-color: #f3be81;
+  border-radius: 3px;
+  bottom: 200px;
+  right: 50px;
+  margin-right: -30px;
+  outline: none;
+  opacity: 0;
+  transition: opacity 0.3s ease, margin-right 0.5s ease-out;
+  cursor: pointer;
+}
+.ufive_uptop:hover {
+  background-color: #f7a445;
+}
+
+.ufive_upview {
+  transition: opacity 0.3s ease, margin-right 0.5s ease-out;
+  margin-right: 0px;
+  opacity: 0.6;
+}
+
+.ufive_uptop::before,
+.ufive_uptop::after {
+  content: "";
+  position: absolute;
+  height: 18px;
+  width: 2px;
+  background-color: #393939;
+  top: 16px;
+}
+.ufive_uptop::before {
+  left: 18px;
+  transform: rotate(45deg);
+}
+.ufive_uptop::after {
+  right: 18px;
+  transform: rotate(-45deg);
+}
+/* uFive.Ru */
 
 
   </style>
@@ -588,6 +673,10 @@ color: #FF7400;
 </div>
 
 </div>
+ <button class="ufive_uptop"></button>
+ 
+ 
+ 
  
     
   </body>
