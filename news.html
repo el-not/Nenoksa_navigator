@@ -8,42 +8,52 @@
 	  
 	  
 	 <META NAME="keywords" CONTENT="ненокса	
-,	
-ненокса архангельская область,	
+ненокса северодвинск,	
 	
-ненокса в сердце моем	,
-ненокоцкая ключевка,
-село ненокса,	
+	
+расписание ненокса,	
+	
+северодвинск ненокса расписание	,
+поезд ненокса,	
+поезд северодвинск ненокса,	
+расписание поездов ненокса,	
+северодвинск ненокса расписание поезда,	
 
-ненокса новости
-ненокса карта	,
-прогноз погоды в неноксе,	
+
+село ненокса,	
+ненокса дежурка	,
+дежурка северодвинск ненокса	,
+ненокса морской	,
+северодвинск ненокса расписание ,	
+морской ненокса расписание,	
+дежурка северодвинск ненокса расписание	,
+
+
 полигон ненокса	,
 ненокса церковь	,
-взрыв в неноксе	,
+
 
 	
-,
+электричка северодвинск ненокса	,
 село ненокса архангельской,	
 
 расписание дежурки северодвинск ненокса ,
-село ненокса архангельской области,	
-ненокса фото	,
+
+
 ненокса сегодня	,
-троицкая церковь ненокса,	
+
 архангельск ненокса	,
 
 ненокса в ч	,
-ненокса архангельская на карте	,
-ненокса архангельская область карта,
-,	
 
-герб ненокса	,
+поезд северодвинск ненокса расписание 2021,	
+рп5 ненокса	,
+
 расписание электричек северодвинск ненокса	,
-ненокса архангельская погода	,
+
 ненокса сайт	,
-ненокса в ч ,
-	,
+
+
 поселок ненокса	,
 	">
     <meta charset="utf-8">
@@ -60,10 +70,6 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 
- 
-
-
-
 
 <link href="fav.ico" rel="icon" type="image/x-icon" />
 
@@ -73,15 +79,7 @@ $(document).ready(function(){
 });
 </script>
 
-<script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
-<script>
-  window.OneSignal = window.OneSignal || [];
-  OneSignal.push(function() {
-    OneSignal.init({
-      appId: "b30b6fbc-3897-4153-991a-3939ec631699",
-    });
-  });
-</script>
+
 
 
 
@@ -92,6 +90,46 @@ $(document).ready(function(){
   
 
 <script type="text/javascript">
+document.addEventListener("DOMContentLoaded", function () {
+  let gototop = document.querySelector(".ufive_uptop");
+  let body = document.documentElement;
+
+  window.addEventListener("scroll", check);
+
+  function check() {
+    pageYOffset >= 500 && gototop.classList.add("ufive_upview");
+    pageYOffset < 500 && gototop.classList.remove("ufive_upview");
+  }
+
+  gototop.onclick = function () {
+    animate({
+      duration: 700,
+      timing: gogototopEaseOut,
+      draw: (progress) => (body.scrollTop = body.scrollTop * (1 - progress / 7))
+    });
+  };
+
+  let circ = (timeFraction) =>
+    1 -
+    Math.sin(Math.acos(timeFraction > 1 ? (timeFraction = 1) : timeFraction));
+
+  let makeEaseOut = (timing) => (timeFraction) => 1 - timing(1 - timeFraction);
+  let gogototopEaseOut = makeEaseOut(circ);
+});
+
+function animate(options) {
+  let start = performance.now();
+
+  requestAnimationFrame(function animate(time) {
+    let timeFraction = (time - start) / options.duration;
+    timeFraction > 1 && (timeFraction = 1);
+
+    let progress = options.timing(timeFraction);
+
+    options.draw(progress);
+    timeFraction < 1 && requestAnimationFrame(animate);
+  });
+}
 
 </script> 
   
@@ -193,15 +231,15 @@ animation:jump 3s ease-out 0s 2 normal;
 		text-transform:uppercase;
 		letter-spacing:.2em;
 	}
-	h2 {
-		font-size:50%;
+	
+		h2 {
+		font-size:100%;
 		line-height:1.2em;
 		font-weight:normal;
 		color:#fff;
 		text-transform:uppercase;
 		letter-spacing:.2em;
 	}
-	
 		
 	/* Happy Resyndicator
 	----------------------------------------------- */
@@ -317,6 +355,60 @@ color: #FF7400;
 100%{ transform:translateY(0); }
 }
 
+.ufive_uptop {
+  position: fixed;
+  display: block;
+  box-sizing: border-box;
+  height: 50px;
+  width: 50px;
+  border: none;
+  background-color: #f3be81;
+  border-radius: 3px;
+  bottom: 140px;
+  right: 10px;
+  margin-right: -30px;
+  outline: none;
+  opacity: 0;
+  transition: opacity 0.3s ease, margin-right 0.5s ease-out;
+  cursor: pointer;
+}
+.ufive_uptop:hover {
+  background-color: #f7a445;
+}
+
+.ufive_upview {
+  transition: opacity 0.3s ease, margin-right 0.5s ease-out;
+  margin-right: 0px;
+  opacity: 0.6;
+}
+
+.ufive_uptop::before,
+.ufive_uptop::after {
+  content: "";
+  position: absolute;
+  height: 18px;
+  width: 2px;
+  background-color: #393939;
+  top: 16px;
+}
+.ufive_uptop::before {
+  left: 18px;
+  transform: rotate(45deg);
+}
+.ufive_uptop::after {
+  right: 18px;
+  transform: rotate(-45deg);
+}
+/* uFive.Ru */
+
+.img {
+position: absolute;
+z-index: 1;
+top: 0px;
+left: 0px;
+}
+
+
 
 
   </style>
@@ -324,7 +416,7 @@ color: #FF7400;
   
   
   <body style="  ">
- 
+
     <h1></h1>
     
  
@@ -341,13 +433,13 @@ color: #FF7400;
     
  <nav class="navbar sticky-top navbar-light"style="background: rgba(0, 0, 0, 0.10);
 "  >
-<a class="navbar-brand" href="#"><span style="font-size:18px;"><span  "></span> </a>
+<a class="navbar-brand" href="#"><span style="font-size:18px;"><span  "><img width="70px" class="img" src="https://imapo.ru/img/imgr3.png"></span> </a>
 <ul class="nav justify-content-end">
 
 <div class="row">
   <div class="col-3  ">
 
-<li class="nav-item"><a class="nav-link" href="#"data-bs-toggle="tooltip" title="Лента новостей села Ненокса. "><span style="color:#FFA714;"><i class="bi bi-rss" style="font-size: 2.5rem; color: #E16600"></i></span></a></li>
+<li class="nav-item"><a class="nav-link" href="index.html"data-bs-toggle="tooltip" title="Лента новостей села Ненокса. "><span style="color:#FFA714;"><i class="bi bi-rss" style="font-size: 2.5rem; color: #E16600"></i></span></a></li>
 </div>
 
 
@@ -385,7 +477,6 @@ color: #FF7400;
   
 <hr>  
 
- 
  <nav>
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="#">Лента</a></li>
@@ -406,8 +497,9 @@ color: #FF7400;
     
     
     
-</nav>   
-   <hr>
+</nav>  
+ 
+    <hr>
    <div class="row">
     <div class="col-sm-6 p-3 "><script src="https://feeds.feedburner.com/feed43/DgqV?format=sigpro" type="text/javascript"></script><noscript><p>Подпишитесь на обновления RSS заголовков от: <a href="http://feeds.feedburner.com/feed43/DgqV"></a><br/>Создано FeedBurner</p> </noscript>
 <hr>
@@ -570,16 +662,16 @@ color: #FF7400;
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
     -->
- 
-   <div class="fixed-bottom">
- <div class="container" style="background: rgba(0, 0, 0, 0.10);">
+   <hr>
+<div class="fixed-bottom">
+ <div class="container" style="background: rgba(0, 0, 0, 0.25);">
   
   <div class="row">
     <div class="col">
       <a class="nav-link" href="mess.html"data-bs-toggle="tooltip" title="Трансляция сообщений со страницы VK 'Ненокса объявления'."><span style="color:#515C7B;"> <i class="bi bi-chat-left-text-fill" style="font-size: 2.5rem; color: #070756"></i </span></a>
     </div>
     <div class="col">
-         <a class="nav-link" href="mapsnenoksa.html"data-bs-toggle="tooltip" title="Нырнуть в портал."><span style="color:#515C7B;"> <i class="bi-geo-alt-fill" style="font-size: 2.5rem; color:#070756"></i </span></a>
+        <a class="nav-link" href="mapsnenoksa.html"data-bs-toggle="tooltip" title="Нырнуть в портал."><span style="color:#515C7B;"> <i class="bi-geo-alt-fill" style="font-size: 2.5rem; color:#070756"></i </span></a>
     </div>
     <div class="col col-md-auto">
       <a class="nav-link" href="https://msg.adamant.im?address /?referal=U7593655164272932552"data-bs-toggle="tooltip"id="myTooltip" title="Шифрованные сообщения и криптокошелек.Получите пробную криптовалюту."><span style="color:#070756" > <i class="bi bi-circle-square" style="font-size: 2.5rem;   "></i </span></a>
@@ -588,12 +680,63 @@ color: #FF7400;
 </div>
 
 </div>
+
+
+
+ 
+<hr>
+
+<hr>
+
+ 
+
+<h1>Ненокса</h1>
+
+<h2>ненокса 
+погода в неноксе,
+полигон ненокса	,
+
+
+прогноз погоды в неноксе
+	
+
+ненокса в ч	,
+
+	
+
+
+ненокса сайт	,
+погода в неноксе по часовая
+
+ ненокса	погода,</h2>
+ 
+
+<hr>
+
+<hr>
+
+ 
+
+
+
+
+ 
+
+    <!-- Необязательный JavaScript; выберите один из двух! -->
+
+    <!-- Вариант 1: пакет Bootstrap с Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
+    <!-- Вариант 2: отдельные JS для Popper и Bootstrap -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+    -->
+    
  <button class="ufive_uptop"></button>
- 
- 
- 
- 
+    
     
   </body>
 </html>
+
 
