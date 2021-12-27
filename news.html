@@ -411,13 +411,12 @@ left: 0px;
 
 
 
-
 /* Acordeon styles */
 .tab {
   position: relative;
   margin-bottom: 3px;
   width: 100%;
-  color: #383360;
+  color: #00132B;
   overflow: hidden;
 }
 .tab input {
@@ -429,7 +428,7 @@ left: 0px;
   position: relative;
   display: block;
   padding: 0 0 0 1em;
-  background: ddd;
+  background:#3D7ED0;
   font-weight: bold;
   line-height: 3;
   cursor: pointer;
@@ -440,7 +439,7 @@ left: 0px;
 .tab-content {
   max-height: 0;
   overflow: hidden;
-  background: #71DFDF;
+  background: #fff;
   -webkit-transition: max-height .35s;
   -o-transition: max-height .35s;
   transition: max-height .35s;
@@ -450,11 +449,11 @@ left: 0px;
 }
 .tab-content p {
   margin: 1em;
-  color: #4118C6;
+  color: #1E1EBD;
 }
 /* :checked */
 .tab input:checked ~ .tab-content {
-  max-height: 100vh;
+  max-height: 200vh;
 }
 /* Icon */
 .tab label::after {
@@ -725,8 +724,24 @@ transition: all 250ms ease-in-out 0s;
  <div class="col-sm-6 p-3 " style= "text-align: left;  ">
   <marquee  scrolldelay="100" onmouseout="this.start()" onmouseover="this.stop()"><span style="color: ;"><b>Уважаемые односельчане и гости села! Сайт работает в тестовом режиме. Расположен и развивается в блокчейн - экосистеме  <a href="https://www.dfinityexplorer.org/#/datacenters" title="Обзор сети">DFINITY</a></b></span></marquee>
    
+   <hr class="hr-washed">
+ <div class="wrapper">
+ 
+  
+  <div class="half">
+  
+    <div class="tab">
+      <input id="tab-one" type="checkbox" name="tabs">
+      <label for="tab-one">Экология общества</label>
+      <div class="tab-content">
+        <p><script src="http://feeds.feedburner.com/feed43/lEXT?format=sigpro" type="text/javascript" ></script><noscript><p>Subscribe to RSS headline updates from: <a href="http://feeds.feedburner.com/feed43/lEXT"></a><br/>Powered by FeedBurner</p> </noscript></p>
+      </div>
+    </div>
    
-
+   
+  </div>
+  </div> 
+    
  
  
 <hr class="hr-washed">
