@@ -3,3 +3,7 @@ $name = $_POST["firstname"];
 $surname = $_POST["lastname"];
 echo "Ваше имя: <b>".$name . " " . $surname . "</b>";
 ?>
+
+<?php 
+         echo "Привет, я - скрипт PHP!"; 
+         ?>
