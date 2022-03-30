@@ -588,6 +588,42 @@ transition: all 250ms ease-in-out 0s;
 	box-shadow: 0 0 10px 5px #1E1EBD;
 }
 
+.wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.text {
+  width: 29ch;
+  color: #4483A9;
+  font-family: italic;
+  font-size: 30px;
+  white-space: nowrap; /* не переносить текст на другую строку */
+  overflow: hidden; /* скрываем переполнение контентом */
+  border-right: 3px solid ddd; /* рисуем курсор */
+  animation: cursor 0.44s step-end infinite, printed_text 7s steps(29);
+}
+
+@keyframes cursor {
+  0% {
+    border-color: white;
+  }
+
+  50% {
+    border-color: transparent;
+  }
+
+  100% {
+    border-color: white;
+  }
+}
+
+@keyframes printed_text {
+  from {
+    width: 0;
+  }
+}
 
 
 
@@ -646,7 +682,8 @@ transition: all 250ms ease-in-out 0s;
  <hr class="hr-washed"> 
   <nav class="navbar navbar-expand-lg navbar-light " style="background-color: #fff;">
   <div class="container-fluid" style="background-color: rgba(0, 0, 0, 0.01);">
-    <a class="navbar-brand"  "style="font-weight:bold;"> Нёнокса _ навигатор <i class="bi bi-geo-alt"></i>    </a>
+    <a class="navbar-brand"  "style="font-weight:bold;"><div class="wrapper">
+  <div class="text"> Нёнокса _ навигатор <i class="bi bi-geo-alt"></i> </div></div>   </a>
         <!-- uSocial -->
 <script async src="https://usocial.pro/usocial/usocial.js?uid=a4ebd267c8f63232&v=6.1.5" data-script="usocial" charset="utf-8"></script>
 <div class="uSocial-Share" data-pid="30aa906bd38573df30d730cde713aa6a" data-type="share" data-options="rect,style3,default,absolute,horizontal,size32,eachCounter0,counter1,counter-after,nomobile,mobile_position_right" data-social="bookmarks,vk,telegram,vi"></div>
